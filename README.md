@@ -1,18 +1,50 @@
+# Ospree Playwright Test Automation
+
+This repository contains automated tests for the Ospree application using Playwright and TypeScript.
+
 ## Getting Started
 
-Welcome to the VS Code Java world. Here is a guideline to help you get started to write Java code in Visual Studio Code.
+### Prerequisites
 
-## Folder Structure
+- Node.js 16.x or higher
+- npm or yarn
 
-The workspace contains two folders by default, where:
+### Installation
 
-- `src`: the folder to maintain sources
-- `lib`: the folder to maintain dependencies
+1. Clone the repository
+2. Install dependencies:
+   ```bash
+   npm install
+   ```
+3. Install Playwright browsers:
+   ```bash
+   npx playwright install
+   ```
 
-Meanwhile, the compiled output files will be generated in the `bin` folder by default.
+### Configuration
 
-> If you want to customize the folder structure, open `.vscode/settings.json` and update the related settings there.
+1. Copy the environment template:
+   ```bash
+   cp .env.example .env
+   ```
+2. Fill in your test credentials and environment settings in the `.env` file
 
-## Dependency Management
+### Project Structure
 
-The `JAVA PROJECTS` view allows you to manage your dependencies. More details can be found [here](https://github.com/microsoft/vscode-java-dependency#manage-dependencies).
+- `pages/` - Page Object Model classes for different application pages
+- `tests/` - Organized test specifications  
+- `test-options.ts` - Custom Playwright test configuration and fixtures
+
+### Running Tests
+
+- Run Directory tests on Chrome: `npm run directoryPage-chrome`
+- Run Directory tests on Firefox: `npm run directoryPage-firefox`  
+- Run tests against development environment: `npm run autoWait-dev`
+- Run tests against staging environment: `npm run autoWait-staging`
+
+### Best Practices
+
+- Follow the Page Object Model pattern for maintainable tests
+- Use environment variables for configuration and credentials
+- Use semantic locators (roles, labels) over CSS selectors when possible
+- Add proper assertions and error handling
