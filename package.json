@@ -9,9 +9,11 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
+    "lint": "eslint . --ext .ts --fix",
+    "type-check": "tsc --noEmit",
     "directoryPage-chrome": "npx playwright test directoryPage.spec.ts --project=chromium",
     "directoryPage-firefox": "npx playwright test directoryPage.spec.ts --project=firefox",
-    "directoryPage-all": "",
+    "directoryPage-all": "npx playwright test directoryPage.spec.ts",
     "autoWait-dev": "URL=https://analytics-v3.onrender.com/ npx playwright test directoryPage.spec.ts --project=chromium",
     "autoWait-staging": "URL=https://demo.ospree.io/ npx playwright test directoryPage.spec.ts --project=chromium"
   },
@@ -23,6 +25,10 @@
     "@faker-js/faker": "^8.4.1",
     "@playwright/test": "^1.43.1",
     "@types/node": "^20.12.7",
-    "dotenv": "^16.4.5"
+    "@typescript-eslint/eslint-plugin": "^6.0.0",
+    "@typescript-eslint/parser": "^6.0.0",
+    "dotenv": "^16.4.5",
+    "eslint": "^8.0.0",
+    "typescript": "^5.0.0"
   }
 }
